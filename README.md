@@ -1,8 +1,7 @@
-# GAMMA: Multi-Modal Glaucoma Classification
-
+# ASCNet: Asymmetric Semantic-Conditioned State Space Fusion for Multimodal Glaucoma Grading
 ## 项目简介
 
-GAMMA 是一个基于双分支多模态融合的青光眼自动分级深度学习框架。该模型同时利用**彩色眼底图像（CFP）**和**光学相干断层扫描图像（OCT）**进行青光眼的三分类诊断：
+ASCNet 是一个基于双分支多模态融合的青光眼自动分级深度学习框架。该模型同时利用**彩色眼底图像（CFP）**和**光学相干断层扫描图像（OCT）**进行青光眼的三分类诊断：
 
 - **类别 0**: 无青光眼（Non-Glaucoma）
 - **类别 1**: 早期青光眼（Early Glaucoma）
@@ -53,19 +52,19 @@ GAMMA 是一个基于双分支多模态融合的青光眼自动分级深度学�
 
 ### 核心模块
 
-#### 1. CSPM (Circular-Structure Perception Module)
+#### 1. CSAM (Circular Structure Adaptation Module)
 **圆形结构感知模块**，用于增强眼底图像的空间注意力感知能力：
 - **通道注意力**: 基于全局平均池化和最大池化的通道权重学习
 - **空间注意力**: 采用**多半径软圆形核**设计，三个并行分支分别学习不同半径的圆形结构模式
 - 更好地捕捉眼底图像中的视杯、视盘等圆形结构特征
 
-#### 2. LA³ (Layer-prior Augmented Axial Attention)
+#### 2. LPEAM (Layer-Prior Enhanced Anisotropic Attention Modulen)
 **层先验增强轴向注意力**，专为OCT图像设计：
 - **H轴分支**: 带层先验偏置的轴向注意力，利用k_h×1条带卷积从原始特征图计算层结构感知权重
 - **W轴分支**: 标准2019年轴向注意力机制
 - 有效建模OCT图像中视网膜各层的结构特征
 
-#### 3. CSSF (Conditional State-Space Fusion)
+#### 3. CACSSFM (Cross-Modal Asymmetric Conditioned State Space Fusion Module)
 **条件状态空间融合模块**，实现CFP与OCT特征的深度融合：
 - **FiLM条件化**: 由OCT全局向量生成调制参数（γ, β）
 - **选择性扫描**: 基于2D状态空间模型的双向（行+列）选择性扫描
@@ -173,10 +172,11 @@ GAMMA/code/
 
 ## 技术亮点
 
-1. **多模态融合**: 首次将CFP的圆形结构感知与OCT的层结构感知相结合
-2. **状态空间建模**: CSSF模块利用选择性扫描机制实现高效的长程依赖建模
-3. **条件化设计**: FiLM条件化使OCT特征能够动态调制CFP特征的处理过程
-4. **可解释性强**: 支持GradCAM可视化，便于理解模型决策依据
+We propose ASCNet, an asymmetric multimodal fusion network for glaucoma grading.
+CACSSFM uses OCT semantics to dynamically modulate CFP spatial features.
+CSAM extracts near-circular optic disc/cup features via multi-radius soft convolutions.
+LPEAM captures OCT retinal layer pathology with improved axial attention and priors.
+ASCNet outperforms SOTA on four glaucoma datasets in both accuracy and efficiency.
 
 ## 引用
 
