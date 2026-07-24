@@ -9,9 +9,8 @@ ASCNet 是一个基于双分支多模态融合的青光眼自动分级深度学�
 ## 模型架构
 
 ### 整体结构
-
-```
 <img width="1189" height="638" alt="未命名绘图20260724-21 drawio (3)" src="https://github.com/user-attachments/assets/72456ff8-d0d6-411e-8d33-3430dabc736b" /># ASCNet: Asymmetric Semantic-Conditioned State Space Fusion for Multimodal Glaucoma Grading
+```
 ┌─────────────────────────────────────────────────────────────┐
 │                    DualBranchModel                          │
 ├─────────────────────────┬───────────────────────────────────┤
