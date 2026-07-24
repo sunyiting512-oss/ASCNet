@@ -1,4 +1,4 @@
-# ASCNet: Asymmetric Semantic-Conditioned State Space Fusion for Multimodal Glaucoma Grading
+<img width="1189" height="638" alt="未命名绘图20260724-21 drawio (3)" src="https://github.com/user-attachments/assets/72456ff8-d0d6-411e-8d33-3430dabc736b" /># ASCNet: Asymmetric Semantic-Conditioned State Space Fusion for Multimodal Glaucoma Grading
 ## 项目简介
 
 ASCNet 是一个基于双分支多模态融合的青光眼自动分级深度学习框架。该模型同时利用**彩色眼底图像（CFP）**和**光学相干断层扫描图像（OCT）**进行青光眼的三分类诊断：
@@ -12,6 +12,9 @@ ASCNet 是一个基于双分支多模态融合的青光眼自动分级深度学�
 ### 整体结构
 
 ```
+
+<img width="5169" height="2772" alt="未命名绘图20260724-21 drawio" src="https://github.com/user-attachments/assets/44a5537d-3bef-4b98-874c-05e8c8cb8231" />
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    DualBranchModel                          │
 ├─────────────────────────┬───────────────────────────────────┤
