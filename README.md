@@ -172,4 +172,3 @@ We propose ASCNet, an asymmetric multimodal fusion network for glaucoma grading\
 
 If you find this work useful for your research, please cite our paper\.
 
-> （注：部分内容可能由 AI 生成）
